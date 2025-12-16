@@ -29,6 +29,26 @@ Deployed as a serverless Azure Function on the **Consumption Plan** (free tier) 
 - Add input validation with Zod
 - Integrate with Azure API Management
 
+## Tech Stack
+- **Azure Functions** (Consumption Plan, Node.js 20)
+- **TypeScript** (v4 programming model)
+- **node-fetch** for external API calls
+- Deployed via VS Code Azure Extension
+
+## Architecture Overview
+This project uses Azure Functions' HTTP trigger to create a scalable, pay-per-execution endpoint.
+
+## Local Development
+1. Clone the repo
+2. `npm install`
+3. Add your weatherapi.com key to `local.settings.json`:
+   ```json
+   {
+     "Values": {
+       "WEATHER_API_KEY": "your-key-here"
+     }
+   }
+
 Sample Response:
 ```json
 {
@@ -41,25 +61,3 @@ Sample Response:
   "feels_like_c": -13.5,
   "last_updated": "2025-12-15 19:45"
 }
-```![](grok_render_searched_image_card_json={"cards":[{"cardId":"d527c1","imageId":"6","caption":"","size":"LARGE"},{"cardId":"9755f9","imageId":"7","caption":"","size":"LARGE"}]})
-
-## Architecture Overview
-
-This project uses Azure Functions' HTTP trigger to create a scalable, pay-per-execution endpoint.![](grok_render_searched_image_card_json={"cards":[{"cardId":"99e794","imageId":"0","caption":"","size":"LARGE"},{"cardId":"e77cec","imageId":"1","caption":"","size":"LARGE"}]})
-
-## Tech Stack
-- **Azure Functions** (Consumption Plan, Node.js 20)
-- **TypeScript** (v4 programming model)
-- **node-fetch** for external API calls
-- Deployed via VS Code Azure Extension
-
-## Local Development
-1. Clone the repo
-2. `npm install`
-3. Add your weatherapi.com key to `local.settings.json`:
-   ```json
-   {
-     "Values": {
-       "WEATHER_API_KEY": "your-key-here"
-     }
-   }
